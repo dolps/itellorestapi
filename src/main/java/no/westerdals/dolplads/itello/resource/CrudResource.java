@@ -8,7 +8,7 @@ import java.util.List;
  * Created by dolplads on 14/05/2017.
  */
 public interface CrudResource<T, E> {
-    List<T> get();
+    List<T> findAll();
 
     T getById(E id);
 }
