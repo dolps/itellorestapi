@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: no.westerdals.dolplads.itello.ItelloApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 18.791 sec - in no.westerdals.dolplads.itello.ItelloApplicationTests
