@@ -13,7 +13,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("users")
-public class UserResource implements CrudResource<Long, User> {
+public class UserResource implements CrudResource<User, Long> {
 
     @RequestMapping(method = RequestMethod.GET)
     public List<User> get() {
