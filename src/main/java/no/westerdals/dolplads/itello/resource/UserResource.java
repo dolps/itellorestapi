@@ -13,10 +13,10 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("users")
-public class UserResource {
+public class UserResource implements CrudResource<Long, User> {
 
     @RequestMapping(method = RequestMethod.GET)
-    public List<User> getUsers() {
+    public List<User> get() {
         List<User> users = new ArrayList<>();
         users.add(new User("thomas", "dolplads"));
         return users;
