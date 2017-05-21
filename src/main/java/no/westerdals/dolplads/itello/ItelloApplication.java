@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * Application added at https://devcenter.heroku.com/articles/deploying-spring-boot-apps-to-heroku#preparing-a-spring-boot-app-for-heroku
  * <p>
+ * to push new changes git push heroku master
  * open app from Terminal with the heroku open command
  * see logs with the heroku logs --tail
  */

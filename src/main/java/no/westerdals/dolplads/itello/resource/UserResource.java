@@ -19,18 +19,33 @@ public class UserResource implements CrudResource<User, Long> {
     @Autowired
     private UserRepository userRepository;
 
-    @RequestMapping(method = RequestMethod.GET)
-    public List<User> findAll() {
-        return userRepository.findAll();
+
+    @Override
+    public User create(User user) {
+        return userRepository.save(user);
     }
 
-    @RequestMapping(path = "{id}", method = RequestMethod.GET)
+    @Override
     public User getById(@PathVariable("id") Long id) {
         return userRepository.findOne(id);
     }
 
-    @RequestMapping(method = RequestMethod.POST)
-    public User create(User user) {
+    @Override
+    public List<User> findAll() {
+        return userRepository.findAll();
+    }
+
+    @Override
+    public void remove(User user) {
+        userRepository.delete(user);
+    }
+
+    @Override
+    public User update(User entity) {
+        User user = userRepository.findOne(entity.getId());
+        user.setFirstName(entity.getFirstName());
+        user.setLastName(entity.getLastName());
+
         return userRepository.save(user);
     }
 
