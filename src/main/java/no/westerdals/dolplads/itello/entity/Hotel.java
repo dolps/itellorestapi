@@ -1,8 +1,8 @@
-package no.westerdals.dolplads.itello.model;
+package no.westerdals.dolplads.itello.entity;
 
+import com.fasterxml.jackson.annotation.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
@@ -11,9 +11,9 @@ import java.util.List;
 /**
  * Created by dolplads on 15/05/2017.
  */
-
 @Entity
 @AllArgsConstructor
+@NoArgsConstructor
 @Data
 public class Hotel {
     @Id
@@ -21,14 +21,12 @@ public class Hotel {
     private Long id;
     private String name;
     private String description;
+    private Double roomFee;
     private String imageUrl;
+    @Embedded
+    private Location location;
 
-    //@OneToMany
-    //private List<Room> rooms;
-
-    // private double priceMin;
-
-    // private double priceMax;
-//    @Embedded
-    //   private Location location;
+    @JsonManagedReference
+    @OneToMany(mappedBy = "hotel")
+    private List<Room> rooms;
 }

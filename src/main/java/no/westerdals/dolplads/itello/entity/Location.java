@@ -1,7 +1,8 @@
-package no.westerdals.dolplads.itello.model;
+package no.westerdals.dolplads.itello.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Embeddable;
 import javax.validation.constraints.NotNull;
@@ -12,9 +13,10 @@ import javax.validation.constraints.NotNull;
 @Embeddable
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class Location {
     @NotNull
-    private long longtitude;
+    private double longtitude;
     @NotNull
-    private long latitude;
+    private double latitude;
 }

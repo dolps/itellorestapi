@@ -1,9 +1,8 @@
-package no.westerdals.dolplads.itello.model;
+package no.westerdals.dolplads.itello.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.RequiredArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,6 +13,7 @@ import javax.persistence.Id;
  * Created by dolplads on 14/05/2017.
  */
 
+@AllArgsConstructor
 @Entity
 @Data
 @EqualsAndHashCode
@@ -23,9 +23,4 @@ public class User {
     private Long id;
     private String firstName;
     private String lastName;
-
-    public User(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
 }

@@ -1,6 +1,6 @@
 package no.westerdals.dolplads.itello.repository;
 
-import no.westerdals.dolplads.itello.model.Hotel;
+import no.westerdals.dolplads.itello.entity.Hotel;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

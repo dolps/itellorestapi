@@ -1,12 +1,11 @@
 package no.westerdals.dolplads.itello.resource;
 
-import no.westerdals.dolplads.itello.model.User;
+import no.westerdals.dolplads.itello.entity.User;
 import no.westerdals.dolplads.itello.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**

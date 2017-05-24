@@ -1,6 +1,5 @@
 package no.westerdals.dolplads.itello.resource;
 
-import no.westerdals.dolplads.itello.model.User;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
