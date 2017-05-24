@@ -3,6 +3,7 @@ package no.westerdals.dolplads.itello.resource;
 import lombok.extern.java.Log;
 import no.westerdals.dolplads.itello.entity.*;
 import no.westerdals.dolplads.itello.model.AvailableRoomsRequest;
+import no.westerdals.dolplads.itello.model.ReservationList;
 import no.westerdals.dolplads.itello.repository.HotelRepository;
 import no.westerdals.dolplads.itello.repository.ReservationRepository;
 import no.westerdals.dolplads.itello.repository.RoomRepository;
@@ -49,6 +50,17 @@ public class HotelResource implements CrudResource<Hotel, Long> {
         log.log(Level.INFO, "reservation:: " + reservation.toString());
 
         return reservationRepository.save(reservation);
+    }
+
+    @RequestMapping(path = "multiroomreservation", method = RequestMethod.POST)
+    public ReservationList multiRoomReservation(@RequestBody ReservationList reservationList) {
+        ReservationList result = new ReservationList();
+        for (Reservation reservation : reservationList.getReservationList()) {
+            Reservation v = reservationRepository.save(reservation);
+            result.getReservationList().add(v);
+        }
+
+        return result;
     }
 
 
