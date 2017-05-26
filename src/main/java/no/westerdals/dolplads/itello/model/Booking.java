@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import no.westerdals.dolplads.itello.entity.Hotel;
 import no.westerdals.dolplads.itello.entity.Reservation;
+import no.westerdals.dolplads.itello.entity.User;
 
 import javax.jws.Oneway;
 import javax.persistence.*;
@@ -26,6 +27,9 @@ public class Booking {
     @ManyToOne
     @JoinColumn
     private Hotel hotel;
+
+    private String useruid;
+
     @OneToMany(fetch = FetchType.EAGER)
     List<Reservation> reservationList = new ArrayList<>();
 }
