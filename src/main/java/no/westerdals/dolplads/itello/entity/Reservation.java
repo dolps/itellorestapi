@@ -1,5 +1,6 @@
 package no.westerdals.dolplads.itello.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
@@ -28,7 +29,7 @@ public class Reservation {
 
     private double totalCost;
 
-    public Reservation(Room room,long dateIn, long dateOut, double totalCost) {
+    public Reservation(Room room, long dateIn, long dateOut, double totalCost) {
         this.room = room;
         this.dateIn = dateIn;
         this.dateOut = dateOut;

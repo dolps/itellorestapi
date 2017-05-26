@@ -23,8 +23,10 @@ public class Hotel {
     private String description;
     private Double roomFee;
     private String imageUrl;
-    @Embedded
-    private Location location;
+
+    private String locationName;
+    private double longtitude;
+    private double latitude;
 
     @JsonManagedReference
     @OneToMany(mappedBy = "hotel")

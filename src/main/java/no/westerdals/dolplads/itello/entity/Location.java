@@ -15,8 +15,7 @@ import javax.validation.constraints.NotNull;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Location {
-    @NotNull
+    private String locationName;
     private double longtitude;
-    @NotNull
     private double latitude;
 }
