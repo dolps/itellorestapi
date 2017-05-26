@@ -1,7 +1,5 @@
 package no.westerdals.dolplads.itello.entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
@@ -20,14 +18,15 @@ public class Reservation {
     @Id
     Long id;
 
-    //@JsonBackReference
+    @ManyToOne
+    @JoinColumn
+    private Hotel hotel;
+
     @ManyToOne
     @JoinColumn
     private Room room;
 
-    @ManyToOne
-    @JoinColumn
-    private User guest;
+    private String useruid;
 
     private long dateIn;
 
@@ -35,9 +34,10 @@ public class Reservation {
 
     private double totalCost;
 
-    public Reservation(Room room, User guest, long dateIn, long dateOut, double totalCost) {
+    public Reservation(Hotel hotel, Room room, String useruid, long dateIn, long dateOut, double totalCost) {
+        this.hotel = hotel;
         this.room = room;
-        this.guest = guest;
+        this.useruid = useruid;
         this.dateIn = dateIn;
         this.dateOut = dateOut;
         this.totalCost = totalCost;

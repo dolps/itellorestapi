@@ -14,6 +14,6 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ReservationList {
+public class Booking {
     List<Reservation> reservationList = new ArrayList<>();
 }

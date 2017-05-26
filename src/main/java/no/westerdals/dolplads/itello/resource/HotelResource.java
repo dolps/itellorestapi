@@ -3,7 +3,7 @@ package no.westerdals.dolplads.itello.resource;
 import lombok.extern.java.Log;
 import no.westerdals.dolplads.itello.entity.*;
 import no.westerdals.dolplads.itello.model.AvailableRoomsRequest;
-import no.westerdals.dolplads.itello.model.ReservationList;
+import no.westerdals.dolplads.itello.model.Booking;
 import no.westerdals.dolplads.itello.repository.HotelRepository;
 import no.westerdals.dolplads.itello.repository.ReservationRepository;
 import no.westerdals.dolplads.itello.repository.RoomRepository;
@@ -53,9 +53,9 @@ public class HotelResource implements CrudResource<Hotel, Long> {
     }
 
     @RequestMapping(path = "multiroomreservation", method = RequestMethod.POST)
-    public ReservationList multiRoomReservation(@RequestBody ReservationList reservationList) {
-        ReservationList result = new ReservationList();
-        for (Reservation reservation : reservationList.getReservationList()) {
+    public Booking multiRoomReservation(@RequestBody Booking booking) {
+        Booking result = new Booking();
+        for (Reservation reservation : booking.getReservationList()) {
             Reservation v = reservationRepository.save(reservation);
             result.getReservationList().add(v);
         }
@@ -106,6 +106,7 @@ public class HotelResource implements CrudResource<Hotel, Long> {
         return c.getTime().toString();
     }
 
+    /*
     @RequestMapping(path = "{id}/ava", method = RequestMethod.GET)
     public List<Room> getRoom(@PathVariable("id") Long id) {
         Room toBook = roomRepository.findOne(1L);
@@ -125,7 +126,7 @@ public class HotelResource implements CrudResource<Hotel, Long> {
 
         return rooms;
     }
-
+*/
 
     @RequestMapping(path = "{id}/availabledates", method = RequestMethod.GET)
     public List<Calendar> getAvailableDatesByHotel(@PathVariable("id") Long id) {
