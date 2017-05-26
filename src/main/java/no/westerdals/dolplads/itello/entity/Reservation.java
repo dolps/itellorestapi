@@ -20,13 +20,7 @@ public class Reservation {
 
     @ManyToOne
     @JoinColumn
-    private Hotel hotel;
-
-    @ManyToOne
-    @JoinColumn
     private Room room;
-
-    private String useruid;
 
     private long dateIn;
 
@@ -34,10 +28,8 @@ public class Reservation {
 
     private double totalCost;
 
-    public Reservation(Hotel hotel, Room room, String useruid, long dateIn, long dateOut, double totalCost) {
-        this.hotel = hotel;
+    public Reservation(Room room,long dateIn, long dateOut, double totalCost) {
         this.room = room;
-        this.useruid = useruid;
         this.dateIn = dateIn;
         this.dateOut = dateOut;
         this.totalCost = totalCost;

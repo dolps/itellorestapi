@@ -34,11 +34,6 @@ public class ReservationResource {
         return reservationRepository.findAll();
     }
 
-    @RequestMapping(path = "{uid}", method = RequestMethod.GET)
-    public List<Reservation> findByUseruid(@PathVariable("uid") String userId) {
-        return reservationRepository.findByUseruid(userId);
-    }
-
     @RequestMapping(path = "multi", method = RequestMethod.POST)
     public Booking multiRoomReservation(@RequestBody Booking booking) {
         log.log(Level.INFO, booking.toString());
