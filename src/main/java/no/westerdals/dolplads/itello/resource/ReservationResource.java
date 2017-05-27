@@ -2,7 +2,7 @@ package no.westerdals.dolplads.itello.resource;
 
 import lombok.extern.java.Log;
 import no.westerdals.dolplads.itello.entity.Reservation;
-import no.westerdals.dolplads.itello.model.Booking;
+import no.westerdals.dolplads.itello.entity.Booking;
 import no.westerdals.dolplads.itello.repository.BookingRepository;
 import no.westerdals.dolplads.itello.repository.ReservationRepository;
 import org.springframework.beans.factory.annotation.Autowired;

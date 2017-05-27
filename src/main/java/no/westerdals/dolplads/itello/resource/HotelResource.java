@@ -3,7 +3,6 @@ package no.westerdals.dolplads.itello.resource;
 import lombok.extern.java.Log;
 import no.westerdals.dolplads.itello.entity.*;
 import no.westerdals.dolplads.itello.model.AvailableRoomsRequest;
-import no.westerdals.dolplads.itello.model.Booking;
 import no.westerdals.dolplads.itello.repository.HotelRepository;
 import no.westerdals.dolplads.itello.repository.ReservationRepository;
 import no.westerdals.dolplads.itello.repository.RoomRepository;
@@ -11,8 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * Created by dolplads on 15/05/2017.
